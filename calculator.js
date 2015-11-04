@@ -5,6 +5,9 @@
  * @variable PRIVATE { Number } `total`
  * @return {object} `calculator` object that can be used
  */
+function calculatorModule () {
+  // body...
+
 
 
   /**
@@ -12,12 +15,78 @@
    * @param  { Number } x
    * @return { Number }    current total
    */
+  var memory = 0;
+  var total = 0;
+
+  var calculator = {
+
+   load: function (number) {
+    if (typeof number !== "number") {
+      return "error error!";
+    }
+    total = number;
+    return total;
+   },
+   getTotal: function () {
+
+    return total;
+
+   },
+   add: function (number) {
+
+    total = number + total;
+    return total;
+
+   },
+   subtract: function (number) {
+
+    total = total - number;
+    return total;
+   },
+
+   multiply: function (number) {
+
+    total = total * number;
+    return total;
+   },
+
+   divide: function (number) {
+
+    total = total / number;
+    return total;
+   },
+
+   recallMemory: function () {
+
+    return memory;
+   },
+
+   saveMemory: function (number) {
+    memory = total;
+    return memory;
+   },
+
+   clearMemory: function () {
+    memory = 0;
+    return memory;
+   },
+  };
+  return calculator;
+}
+
+
+
+
+
+
+
 
 
   /**
    * Return the value of `total`
    * @return { Number }
    */
+
 
 
   /**
@@ -62,4 +131,5 @@
   /**
    * Validation
    */
+
 
